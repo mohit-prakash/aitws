@@ -1,0 +1,249 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"description": "Api Documentation",
+		"version": "1.0",
+		"title": "Api Documentation",
+		"termsOfService": "urn:tos",
+		"contact": {},
+		"license": {
+			"name": "Apache 2.0",
+			"url": "http://www.apache.org/licenses/LICENSE-2.0"
+		}
+	},
+	"host": "localhost:9090",
+	"basePath": "/",
+	"tags": [
+		{
+			"name": "irctc-rest",
+			"description": "Irctc Rest"
+		}
+	],
+	"paths": {
+		"/bookticket": {
+			"post": {
+				"tags": [
+					"irctc-rest"
+				],
+				"summary": "saveTicket",
+				"operationId": "saveTicketUsingPOST",
+				"consumes": [
+					"applicatiion/xml",
+					"application/json"
+				],
+				"produces": [
+					"*/*"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "preq",
+						"description": "preq",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/PassengerRequest"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "string"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				}
+			}
+		},
+		"/ticket/update": {
+			"put": {
+				"tags": [
+					"irctc-rest"
+				],
+				"summary": "updateTicket",
+				"operationId": "updateTicketUsingPUT",
+				"consumes": [
+					"application/xml",
+					"application/json"
+				],
+				"produces": [
+					"*/*"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "tr",
+						"description": "tr",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/TicketResponse"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "string"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				}
+			}
+		},
+		"/ticket/{pnr}": {
+			"get": {
+				"tags": [
+					"irctc-rest"
+				],
+				"summary": "getTicket",
+				"operationId": "getTicketUsingGET",
+				"produces": [
+					"application/json",
+					"application/xml"
+				],
+				"parameters": [
+					{
+						"name": "pnr",
+						"in": "query",
+						"description": "pnr",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/TicketResponse"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"irctc-rest"
+				],
+				"summary": "deleteTicket",
+				"operationId": "deleteTicketUsingDELETE",
+				"produces": [
+					"*/*"
+				],
+				"parameters": [
+					{
+						"name": "pnr",
+						"in": "path",
+						"description": "pnr",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "string"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				}
+			}
+		}
+	},
+	"definitions": {
+		"PassengerRequest": {
+			"type": "object",
+			"properties": {
+				"email": {
+					"type": "string"
+				},
+				"from": {
+					"type": "string"
+				},
+				"jdate": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				},
+				"phno": {
+					"type": "string"
+				},
+				"tnum": {
+					"type": "string"
+				},
+				"to": {
+					"type": "string"
+				}
+			},
+			"title": "PassengerRequest"
+		},
+		"TicketResponse": {
+			"type": "object",
+			"properties": {
+				"cost": {
+					"type": "string"
+				},
+				"from": {
+					"type": "string"
+				},
+				"jdate": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				},
+				"pnr": {
+					"type": "string"
+				},
+				"status": {
+					"type": "string"
+				},
+				"to": {
+					"type": "string"
+				}
+			},
+			"title": "TicketResponse"
+		}
+	}
+}
