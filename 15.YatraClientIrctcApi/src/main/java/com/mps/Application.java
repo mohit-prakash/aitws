@@ -14,13 +14,13 @@ public class Application {
 		ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
 		TicketService bean = context.getBean(TicketService.class);
 		
-		//To book Ticket uncomment this.... and Note PNR
-		//String bookTicket = bean.bookTicket();
-		//System.out.println("PNR is"+bookTicket);
+//		To book Ticket uncomment this.... and Note PNR
+//		String bookTicket = bean.bookTicket();
+//		System.out.println("PNR is"+bookTicket);
 		
-		//To get Ticket ticket response use same PNR in url and uncomment below 
-		//TicketResponse ticket = bean.getTicket();
-		//System.out.println(ticket);
+//		To get Ticket ticket response use same PNR in url and uncomment below 
+//		TicketResponse ticket = bean.getTicket();
+//		System.out.println(ticket);
 		
 	}
 

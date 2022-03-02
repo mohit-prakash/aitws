@@ -33,7 +33,7 @@ public class TicketService {
 	public TicketResponse getTicket()
 	{
 		TicketResponse response=null;
-		String url="https://irctc-railway-api.herokuapp.com/ticket/PNR8361";
+		String url="https://irctc-railway-api.herokuapp.com/ticket/PNR2716";
 		RestTemplate rt=new RestTemplate();
 		ResponseEntity<TicketResponse> forEntity = rt.getForEntity(url, TicketResponse.class);
 		response = forEntity.getBody();
