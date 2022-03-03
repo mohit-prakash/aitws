@@ -12,7 +12,7 @@ public class TicketService {
 	{
 		System.out.println("SYN -- request sending");
 		TicketResponse response=null;
-		String url="https://irctc-railway-api.herokuapp.com/ticket/PNR7043";
+		String url="https://irctc-railway-api.herokuapp.com/ticket/PNR2218";
 		
 		WebClient webClient=WebClient.create();
 		response = webClient.get()
@@ -31,7 +31,7 @@ public class TicketService {
 	{
 		System.out.println("ASYN -- request sending");
 		TicketResponse response=null;
-		String url="https://irctc-railway-api.herokuapp.com/ticket/PNR7043";
+		String url="https://irctc-railway-api.herokuapp.com/ticket/PNR2218";
 		
 		WebClient webClient=WebClient.create();
 		webClient.get()
@@ -39,8 +39,14 @@ public class TicketService {
 						.header("Accept", "application/json")
 						.retrieve()
 						.bodyToMono(TicketResponse.class)
-						.subscribe();
+						.subscribe(TicketService::handleResponse);
 		//since It is a asynchronous,Printing of Custom Logic will be quick. Not wait for response	
 		System.out.println("Custom Logic..........");
+	}
+	
+	public static void handleResponse(TicketResponse response)
+	{
+		System.out.println("Response Handler Called........");
+		System.out.println(response);
 	}
 }
