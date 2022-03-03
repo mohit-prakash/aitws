@@ -14,10 +14,8 @@ public class Application {
 		ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
 		
 		TicketService bean = context.getBean(TicketService.class);
-		
-		TicketResponse response=bean.getTicket();
-		
-		System.out.println(response);
+		bean.getTicket();
+		bean.getTicketAsync();
 	}
 
 }
