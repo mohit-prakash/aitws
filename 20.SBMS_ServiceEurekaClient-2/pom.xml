@@ -14,7 +14,7 @@
 	<name>20.SBMS_ServiceEurekaClient-2</name>
 	<description>Service Client using Eureka Client</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>1.8</java.version>
 		<spring-cloud.version>2021.0.1</spring-cloud.version>
 	</properties>
 	<dependencies>

@@ -12,7 +12,7 @@ zuul:
   routes:
     r1:
         path: /api1/**
-        serviceId: WELCOME
+        serviceId: WELCOME-SERVICE
     r2:
         path: /api2/**
-        serviceId: GREET
+        serviceId: GREET-SERVICE

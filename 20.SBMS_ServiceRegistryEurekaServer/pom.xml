@@ -14,7 +14,7 @@
 	<name>20.SBMS_ServiceRegistryEurekaServer</name>
 	<description>Service Registry using Eureka Server</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>1.8</java.version>
 		<spring-cloud.version>2021.0.1</spring-cloud.version>
 	</properties>
 	<dependencies>
