@@ -1,0 +1,12 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: Demo-App
+    
+demo:
+  properties:
+    welcomeMsg: Welcome to New World !!
+    greetMsg: Good Morning !!
+    testMsg: This is a test message!!
