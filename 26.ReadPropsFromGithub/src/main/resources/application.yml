@@ -1,0 +1,13 @@
+server:
+  port: 9090
+  
+spring:
+  application:
+    name: ReadPropsFromGithub
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/mohit-prakash/aitws/tree/master/26.ReadPropsFromGithub/Props%20for%20Project26%20on%20Github
+          clone-on-start: true                                
